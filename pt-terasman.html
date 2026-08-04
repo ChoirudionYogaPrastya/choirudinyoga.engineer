@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terasman | Gender Equality Community</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --bg: #0a0f19;
+            --card: rgba(20, 27, 45, 0.86);
+            --text: #f8fafc;
+            --muted: #a5b4c9;
+            --accent: #f472b6;
+            --accent-2: #818cf8;
+            --accent-gradient: linear-gradient(135deg, #ec4899, #8b5cf6);
+        }
+
+        * { box-sizing: border-box; font-family: 'Inter', sans-serif; }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top right, rgba(244,114,182,0.16), transparent 20%),
+                radial-gradient(circle at top left, rgba(129,140,248,0.22), transparent 24%),
+                linear-gradient(135deg, #090d17, #0a1120 55%, #0b0f18);
+            line-height: 1.75;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 28px;
+            background: rgba(7, 11, 22, 0.84);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+            backdrop-filter: blur(10px);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #dbeafe;
+            text-decoration: none;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.35fr 0.95fr;
+            gap: 18px;
+            margin: 10px 0 20px;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 18px;
+            padding: 20px;
+            box-shadow: 0 16px 40px rgba(0,0,0,0.24);
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(244,114,182,0.16);
+            border: 1px solid rgba(244,114,182,0.4);
+            color: #fce7f3;
+            font-size: 0.84rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            margin: 0 0 10px;
+            font-size: 2.1rem;
+        }
+
+        .subtitle {
+            color: var(--muted);
+            margin: 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 14px;
+            margin: 18px 0 24px;
+        }
+
+        .stat {
+            background: rgba(255,255,255,0.04);
+            padding: 16px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .stat .label {
+            color: var(--muted);
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .stat .value {
+            font-size: 1.7rem;
+            font-weight: 800;
+            margin-top: 8px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+            color: #dbeafe;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 18px;
+        }
+
+        li {
+            color: var(--muted);
+            margin-bottom: 10px;
+        }
+
+        .mini-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 14px;
+            margin-top: 18px;
+        }
+
+        .mini-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 16px;
+        }
+
+        .mini-card h3 {
+            margin: 0 0 8px;
+            font-size: 1rem;
+            color: #fff;
+        }
+
+        .mini-card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back-link" href="WEBSITE AI.html"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
+
+        <div class="hero-grid">
+            <div class="card">
+                <div class="badge"><i class="fa-solid fa-people-group"></i> Advocacy Program</div>
+                <h1>Terasman</h1>
+                <p class="subtitle">Gender Equality Community | Head of Design and Social Media | November 2024 – Present</p>
+                <p>I support gender-equality education through creative communication, community engagement, and volunteer mobilization. The project combines online advocacy and offline outreach to reach both youth and families in a more human-centered way.</p>
+            </div>
+            <div class="card">
+                <div class="section-title"><i class="fa-solid fa-chart-column"></i> Impact Snapshot</div>
+                <div class="stats-grid">
+                    <div class="stat">
+                        <div class="label">Offline Reach</div>
+                        <div class="value">50+</div>
+                    </div>
+                    <div class="stat">
+                        <div class="label">Volunteer Network</div>
+                        <div class="value">70+</div>
+                    </div>
+                    <div class="stat">
+                        <div class="label">Campaign Platforms</div>
+                        <div class="value">Multi</div>
+                    </div>
+                    <div class="stat">
+                        <div class="label">Community Focus</div>
+                        <div class="value">Desa Cilincing</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="section-title"><i class="fa-solid fa-bullseye"></i> Key Achievements</div>
+            <ul>
+                <li>Ran offline gender-equality education programs reaching 50+ community members and children in Desa Cilincing.</li>
+                <li>Managed online gender-equality campaigns and podcasts across multiple digital platforms.</li>
+                <li>Coordinated 70+ volunteers across the community's overall program execution.</li>
+            </ul>
+        </div>
+
+        <div class="mini-grid">
+            <div class="mini-card">
+                <h3>Digital Strategy</h3>
+                <p>Designed communication content that made social advocacy more accessible, attractive, and shareable across online audiences.</p>
+            </div>
+            <div class="mini-card">
+                <h3>Field Reach</h3>
+                <p>Delivered community education directly to youth and local residents, strengthening real-world dialogue and awareness.</p>
+            </div>
+            <div class="mini-card">
+                <h3>Execution Impact</h3>
+                <p>Connected community storytelling, volunteer mobilization, and digital campaigns into one coherent advocacy system.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

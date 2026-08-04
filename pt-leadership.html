@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leadership & Organizational Experiences | Detail Experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #0b0c10;
+            --card-bg: rgba(30, 41, 59, 0.72);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-color: #60a5fa;
+            --accent-gradient: linear-gradient(135deg, #3b82f6, #14b8a6);
+        }
+        * { box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body {
+            margin: 0;
+            background: radial-gradient(circle at top, #1b2735 0%, #090a0f 100%);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 30px;
+            background: linear-gradient(180deg, rgba(15,23,42,0.88), rgba(11,12,16,0.92));
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        .container::before {
+            content: '';
+            position: absolute;
+            width: 260px;
+            height: 260px;
+            top: -70px;
+            right: -70px;
+            background: radial-gradient(circle, rgba(59,130,246,0.30), transparent 70%);
+            pointer-events: none;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 18px;
+            text-decoration: none;
+            color: #dbeafe;
+            font-weight: 700;
+        }
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            line-height: 1.2;
+        }
+        .badge {
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(96,165,250,0.14);
+            color: #dbeafe;
+            border: 1px solid rgba(96,165,250,0.4);
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.25fr 0.75fr;
+            gap: 18px;
+            margin-bottom: 24px;
+        }
+        .hero-card, .image-card, .section-card, .role-card, .mini-stat {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 18px 20px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+        }
+        .hero-card p, .section-card li, .role-card p, .role-card li {
+            color: var(--text-muted);
+        }
+        .image-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            display: block;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        .meta {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 18px 0 20px;
+            font-weight: 600;
+            color: #cbd5e1;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin: 20px 0 24px;
+        }
+        .mini-stat .label {
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .mini-stat .value {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin: 8px 0 4px;
+        }
+        .section-card h3, .role-card h3 {
+            margin: 0 0 12px;
+            font-size: 1rem;
+            color: #dbeafe;
+        }
+        .role-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+            margin-top: 18px;
+        }
+        .role-card h4 {
+            margin: 0 0 8px;
+            font-size: 1.05rem;
+            color: #fff;
+        }
+        .role-card .duration {
+            display: inline-block;
+            margin-bottom: 10px;
+            font-size: 0.82rem;
+            color: #93c5fd;
+        }
+        .section-card ul, .role-card ul { padding-left: 20px; margin: 0; }
+        .section-card li, .role-card li { margin-bottom: 10px; }
+        .icon-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 12px;
+            border-radius: 999px;
+            background: rgba(20,184,166,0.12);
+            border: 1px solid rgba(20,184,166,0.3);
+            color: #ccfbf1;
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+        }
+        @media (max-width: 768px) {
+            .hero-grid { grid-template-columns: 1fr; }
+            .topbar { align-items: flex-start; }
+            .meta { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back-link" href="WEBSITE AI.html">← Back to Portfolio</a>
+
+        <div class="topbar">
+            <h1>Leadership &amp; Organizational Experiences</h1>
+            <div class="badge">Student Leadership • Administration • Community Development</div>
+        </div>
+
+        <div class="meta">
+            <span><i class="fa-solid fa-briefcase"></i> Cross-functional leadership across campus governance and student organizations</span>
+            <span>2023 – 2025</span>
+        </div>
+
+        <div class="hero-grid">
+            <div class="hero-card">
+                <div class="icon-pill"><i class="fa-solid fa-user-tie"></i> Leadership Narrative</div>
+                <p>My leadership journey has been shaped by public accountability, team development, and process discipline. From leading legislative oversight in the faculty student council to mentoring laboratory assistants and managing organizational administration, each role strengthened my ability to align people, systems, and outcomes.</p>
+            </div>
+            <div class="image-card">
+                <img src="foto_yoga.jpg.png" alt="Leadership and organizational experience">
+            </div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="mini-stat">
+                <div class="label">🧭 Leadership Scope</div>
+                <div class="value">6+</div>
+                <div class="label">Major organizational roles</div>
+            </div>
+            <div class="mini-stat">
+                <div class="label">👥 Student Reach</div>
+                <div class="value">2,000+</div>
+                <div class="label">Students supported or supervised</div>
+            </div>
+            <div class="mini-stat">
+                <div class="label">📚 Teams Mentored</div>
+                <div class="value">12+</div>
+                <div class="label">Staff and assistant cohorts</div>
+            </div>
+            <div class="mini-stat">
+                <div class="label">🏆 Result</div>
+                <div class="value">80%</div>
+                <div class="label">Training competency pass rate</div>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <h3><i class="fa-solid fa-rocket"></i> Leadership Snapshot</h3>
+            <ul>
+                <li><strong>MPM FTUI</strong> — Served as Head of the Legislative, overseeing regulatory alignment and documentation for student activities across the faculty.</li>
+                <li><strong>Electrical Physics Laboratory</strong> — Supervised practical lab sessions for 2,000+ students while maintaining rigorous evaluation standards and strong academic consistency.</li>
+                <li><strong>Physical Metallurgy Laboratory</strong> — Guided 140+ students in destructive testing methods and built a future assistant pipeline by recruiting and onboarding 40 successors.</li>
+                <li><strong>IMMt FTUI</strong> — Led administrative consolidation and training programs that improved organizational communication and internal documentation.</li>
+                <li><strong>GPTech SC UI</strong> — Managed transparent financial operations and community service budgeting with zero discrepancies.</li>
+                <li><strong>Rumah Kepemimpinan Scholarship</strong> — Contributed as Vice President and Minister of Internal Affairs, coordinating 30+ scholarship programs and 20+ dormitory initiatives.</li>
+            </ul>
+        </div>
+
+        <div class="role-grid">
+            <div class="role-card">
+                <h3><i class="fa-solid fa-scale-balanced"></i> Institutional Oversight</h3>
+                <h4>MPM FTUI — Head of the Legislative</h4>
+                <span class="duration">Feb 2023 – Dec 2025</span>
+                <ul>
+                    <li>Evaluated and supervised institutional programs within IKM FTUI to ensure compliance, documentation quality, and better governance standards.</li>
+                    <li>Advocated student welfare and development priorities directly affecting more than 2,000 engineering students.</li>
+                </ul>
+            </div>
+
+            <div class="role-card">
+                <h3><i class="fa-solid fa-flask"></i> Laboratory Mentoring</h3>
+                <h4>Electrical Physics Laboratory — Laboratory Assistant</h4>
+                <span class="duration">Jan 2025 – Dec 2025</span>
+                <ul>
+                    <li>Instructed practical laboratory sessions for students across engineering disciplines, emphasizing electrical physics fundamentals and wave interference.</li>
+                    <li>Maintained disciplined grading standards that preserved an average class score of 81/100 over the semester.</li>
+                </ul>
+            </div>
+
+            <div class="role-card">
+                <h3><i class="fa-solid fa-wrench"></i> Technical People Development</h3>
+                <h4>Physical Metallurgy Laboratory — Laboratory Assistant</h4>
+                <span class="duration">Jan 2025 – Dec 2025</span>
+                <ul>
+                    <li>Mentored 140+ engineering students in destructive testing procedures and guided hands-on training to reinforce material science concepts.</li>
+                    <li>Assessed technical reports and designed a recruitment pipeline that successfully onboarded 40 qualified successors.</li>
+                </ul>
+            </div>
+
+            <div class="role-card">
+                <h3><i class="fa-solid fa-clipboard-list"></i> Administration & Coordination</h3>
+                <h4>IMMt FTUI — Staff of Administration</h4>
+                <span class="duration">Feb 2023 – Dec 2023</span>
+                <ul>
+                    <li>Orchestrated a mid-term organizational consolidation event involving 100+ members, improving alignment and communication.</li>
+                    <li>Delivered administrative training to 12 staff members with an 80% competency pass rate and standardized internal documentation.</li>
+                </ul>
+            </div>
+
+            <div class="role-card">
+                <h3><i class="fa-solid fa-hand-holding-dollar"></i> Financial Stewardship</h3>
+                <h4>GPTech SC UI — General Finance, Secretary, &amp; Community Service Treasurer</h4>
+                <span class="duration">Feb 2023 – Dec 2023</span>
+                <ul>
+                    <li>Built a transparent cash-flow tracking system that supported clean organizational financial management.</li>
+                    <li>Managed a community service project budget of IDR 10,000,000 with zero discrepancies and optimized resource utilization.</li>
+                </ul>
+            </div>
+
+            <div class="role-card">
+                <h3><i class="fa-solid fa-calendar-days"></i> Event Leadership</h3>
+                <h4>Gradasi FTUI — Head of Event</h4>
+                <span class="duration">Jan 2023 – Mar 2023</span>
+                <ul>
+                    <li>Directed a charity and sharing event with multiple sessions, including the grand opening, closing, and 6 core presentation tracks.</li>
+                </ul>
+            </div>
+
+            <div class="role-card">
+                <h3><i class="fa-solid fa-trophy"></i> Program Recognition</h3>
+                <h4>Rumah Kepemimpinan Scholarship — Awardee &amp; Vice President</h4>
+                <span class="duration">Jul 2024 – Jul 2026</span>
+                <ul>
+                    <li>Elected as Vice President and Minister of Internal Affairs, coordinating 30+ scholarship programs and 20+ strategic dormitory initiatives.</li>
+                    <li>Recognized as “Leader of the Month” twice in a two-month period for exceptional execution and team management.</li>
+                    <li>Completed intensive leadership, religious, and ethical training to support holistic personal and professional development.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section-card" style="margin-top: 22px;">
+            <h3><i class="fa-solid fa-chart-line"></i> Impact Summary</h3>
+            <ul>
+                <li>Built organizational systems that improved communication, governance, and administrative consistency across student leadership environments.</li>
+                <li>Translated academic preparation into practical people leadership by mentoring students, managing events, and driving strategic initiatives.</li>
+                <li>Demonstrated that leadership is not only about titles, but also about reliability, documentation, financial integrity, and long-term team development.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT Astra Honda Motor | Detail Experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b0c10;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-color: #3b82f6;
+            --accent-gradient: linear-gradient(135deg, #3b82f6, #14b8a6);
+        }
+        * { box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body {
+            margin: 0;
+            background: radial-gradient(circle at top, #1b2735 0%, #090a0f 100%);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 980px;
+            margin: 60px auto;
+            padding: 30px;
+            background: linear-gradient(180deg, rgba(15,23,42,0.88), rgba(11,12,16,0.92));
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        .container::before {
+            content: '';
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            top: -60px;
+            right: -40px;
+            background: radial-gradient(circle, rgba(59,130,246,0.35), transparent 70%);
+            pointer-events: none;
+        }
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 22px;
+        }
+        h1 { font-size: 2.3rem; margin: 0; }
+        .badge {
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(59,130,246,0.18);
+            color: #dbeafe;
+            font-size: 0.85rem;
+            border: 1px solid rgba(59,130,246,0.4);
+            white-space: nowrap;
+        }
+        .meta {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0 18px;
+            color: #cbd5e1;
+            font-weight: 600;
+        }
+        .hero-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 18px 20px;
+            margin-bottom: 20px;
+        }
+        .hero-card p { color: var(--text-muted); margin: 0; }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin: 20px 0 24px;
+        }
+        .stat-card {
+            background: rgba(255,255,255,0.045);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 14px;
+            padding: 18px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .stat-card .label {
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .stat-card .value {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: white;
+            margin: 8px 0 4px;
+        }
+        .section-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.09);
+            border-radius: 16px;
+            padding: 18px 20px;
+            margin-top: 18px;
+        }
+        .section-card h3 {
+            margin: 0 0 12px;
+            font-size: 1rem;
+            color: #dbeafe;
+        }
+        .section-card ul { padding-left: 20px; margin: 0; }
+        .section-card li { color: var(--text-muted); margin-bottom: 10px; }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: #dbeafe;
+            font-weight: 700;
+        }
+        @media (max-width: 768px) {
+            .topbar { flex-direction: column; align-items: flex-start; }
+            .meta { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back-link" href="WEBSITE AI.html">← Back to Portfolio</a>
+        <div class="topbar">
+            <h1>PT Astra Honda Motor (AHM)</h1>
+            <div class="badge">Cikarang, Indonesia</div>
+        </div>
+
+        <div class="meta">
+            <span>Casting Production Intern</span>
+            <span>September 2025 – October 2025</span>
+        </div>
+
+        <div class="hero-card">
+            <p>Focused on the root cause of casting defects and the redesign of a flow-control system to improve product reliability and reduce rejection risk in high-volume production.</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="label">📌 Defect Type</div>
+                <div class="value">1</div>
+                <div class="label">Shrinkage Porosity</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">🧠 Method</div>
+                <div class="value">FTA</div>
+                <div class="label">Fault Tree Analysis</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">⚙️ Improvement Focus</div>
+                <div class="value">Cooling-Gating</div>
+                <div class="label">System redesign</div>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <h3>🚀 Impact Story</h3>
+            <ul>
+                <li><strong>Investigated a critical casting issue</strong> on the Lower Part Cylinder Head through structured FTA, turning a vague quality problem into a measurable technical root-cause narrative.</li>
+                <li><strong>Designed a practical improvement direction</strong> for the Cooling-Gating System to reduce rejection pressure and support better part quality in a production-critical environment.</li>
+            </ul>
+        </div>
+
+        <div class="section-card">
+            <h3>🛠️ What I Delivered</h3>
+            <ul>
+                <li>Mapped process deviation points that were most likely to trigger shrinkage porosity.</li>
+                <li>Proposed a structural improvement strategy aligned with casting quality goals and production stability.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT Unipack Plasindo | Detail Experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b0c10;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-color: #3b82f6;
+            --accent-gradient: linear-gradient(135deg, #3b82f6, #14b8a6);
+        }
+        * { box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body {
+            margin: 0;
+            background: radial-gradient(circle at top, #1b2735 0%, #090a0f 100%);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 980px;
+            margin: 60px auto;
+            padding: 30px;
+            background: linear-gradient(180deg, rgba(15,23,42,0.88), rgba(11,12,16,0.92));
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        .container::before {
+            content: '';
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            top: -60px;
+            right: -40px;
+            background: radial-gradient(circle, rgba(20,184,166,0.28), transparent 70%);
+            pointer-events: none;
+        }
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 22px;
+        }
+        h1 { font-size: 2.3rem; margin: 0; }
+        .badge {
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(20,184,166,0.18);
+            color: #d1fae5;
+            font-size: 0.85rem;
+            border: 1px solid rgba(20,184,166,0.4);
+            white-space: nowrap;
+        }
+        .meta {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0 18px;
+            color: #cbd5e1;
+            font-weight: 600;
+        }
+        .hero-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 18px 20px;
+            margin-bottom: 20px;
+        }
+        .hero-card p { color: var(--text-muted); margin: 0; }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin: 20px 0 24px;
+        }
+        .stat-card {
+            background: rgba(255,255,255,0.045);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 14px;
+            padding: 18px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .stat-card .label {
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .stat-card .value {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: white;
+            margin: 8px 0 4px;
+        }
+        .section-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.09);
+            border-radius: 16px;
+            padding: 18px 20px;
+            margin-top: 18px;
+        }
+        .section-card h3 {
+            margin: 0 0 12px;
+            font-size: 1rem;
+            color: #d1fae5;
+        }
+        .section-card ul { padding-left: 20px; margin: 0; }
+        .section-card li { color: var(--text-muted); margin-bottom: 10px; }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: #dbeafe;
+            font-weight: 700;
+        }
+        @media (max-width: 768px) {
+            .topbar { flex-direction: column; align-items: flex-start; }
+            .meta { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back-link" href="WEBSITE AI.html">← Back to Portfolio</a>
+        <div class="topbar">
+            <h1>PT Unipack Plasindo</h1>
+            <div class="badge">Cikarang, Indonesia</div>
+        </div>
+
+        <div class="meta">
+            <span>Engineering Intern</span>
+            <span>Aug 2025 – September 2025</span>
+        </div>
+
+        <div class="hero-card">
+            <p>Investigated polymer processing reliability issues and translated production observations into engineering recommendations that supported smoother machine operation and better process control.</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="label">📊 Observation Track</div>
+                <div class="value">3</div>
+                <div class="label">Efficiency projects</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">🔍 Main Focus</div>
+                <div class="value">2</div>
+                <div class="label">Failure domains</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">⚙️ Outcome</div>
+                <div class="value">Flow</div>
+                <div class="label">Material optimization</div>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <h3>🚀 Impact Story</h3>
+            <ul>
+                <li><strong>Diagnosed mechanical wear on twin-screw extruders and barrels</strong>, tracing the origins of melting failure in ceiling sheet production.</li>
+                <li><strong>Evaluated additives and lubricant formulations</strong> to improve material flow behavior and reduce risk of buildup in dies.</li>
+                <li><strong>Completed 3 observation projects</strong> focused on production efficiency and delivered engineering recommendations directly to the department.</li>
+            </ul>
+        </div>
+
+        <div class="section-card">
+            <h3>🛠️ What I Delivered</h3>
+            <ul>
+                <li>Identified operational bottlenecks that affected process continuity.</li>
+                <li>Supported decision-making with evidence-driven technical insights for engineering action.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

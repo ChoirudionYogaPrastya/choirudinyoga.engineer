@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choirudin Yoga Prastya | Portfolio</title>
+    
+    <!-- Mengambil font modern dari Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Mengambil icon dari FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* =========================================================
+           BAGIAN CSS (TAMPILAN DAN GAYA WEBSITE)
+           ========================================================= */
+        :root {
+            --bg-color: #0b0c10; /* Warna background lebih gelap untuk luar angkasa */
+            --card-bg: rgba(30, 41, 59, 0.7); /* Dibuat agak transparan agar background bintang terlihat */
+            --text-main: #f8fafc; /* Warna teks utama (putih terang) */
+            --text-muted: #94a3b8; /* Warna teks abu-abu */
+            --accent-color: #3b82f6; /* Warna biru aksen */
+            --accent-gradient: linear-gradient(135deg, #3b82f6, #14b8a6); /* Gradien biru ke tosca */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth; /* Efek scroll halus saat klik menu navigasi */
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* =========================================================
+           ANIMASI LUAR ANGKASA & BINTANG JATUH
+           ========================================================= */
+        .space-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1; /* Berada di paling belakang */
+            background:
+                radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.28), transparent 18%),
+                radial-gradient(circle at 80% 15%, rgba(168, 85, 247, 0.24), transparent 22%),
+                radial-gradient(circle at 45% 75%, rgba(20, 184, 166, 0.18), transparent 25%),
+                radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+            overflow: hidden;
+        }
+
+        .space-background::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 15% 35%, rgba(255,255,255,0.18) 0 1px, transparent 1.3px),
+                radial-gradient(circle at 72% 30%, rgba(255,255,255,0.18) 0 1px, transparent 1.3px),
+                radial-gradient(circle at 88% 62%, rgba(255,255,255,0.18) 0 1px, transparent 1.3px),
+                radial-gradient(circle at 32% 82%, rgba(255,255,255,0.18) 0 1px, transparent 1.3px);
+            background-size: 220px 220px, 280px 280px, 300px 300px, 260px 260px;
+            opacity: 0.8;
+        }
+
+        .space-background::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 30% 50%, rgba(59, 130, 246, 0.18), transparent 22%),
+                radial-gradient(circle at 70% 60%, rgba(168, 85, 247, 0.12), transparent 25%);
+            filter: blur(20px);
+        }
+
+        .shooting-stars span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 4px;
+            height: 4px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1),
+                        0 0 0 8px rgba(255, 255, 255, 0.1),
+                        0 0 20px rgba(255, 255, 255, 1);
+            animation: animate-stars 3s linear infinite;
+        }
+
+        .shooting-stars span::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 300px;
+            height: 1px;
+            background: linear-gradient(90deg, #fff, transparent);
+        }
+
+        @keyframes animate-stars {
+            0% {
+                transform: rotate(315deg) translateX(0);
+                opacity: 1;
+            }
+            70% {
+                opacity: 1;
+            }
+            100% {
+                transform: rotate(315deg) translateX(-1000px);
+                opacity: 0;
+            }
+        }
+
+        /* Mengatur posisi & delay bintang jatuh agar natural */
+        .shooting-stars span:nth-child(1) { top: 0; right: 0; left: initial; animation-delay: 0; animation-duration: 1s; }
+        .shooting-stars span:nth-child(2) { top: 0; right: 80px; left: initial; animation-delay: 0.2s; animation-duration: 3s; }
+        .shooting-stars span:nth-child(3) { top: 80px; right: 0px; left: initial; animation-delay: 0.4s; animation-duration: 2s; }
+        .shooting-stars span:nth-child(4) { top: 0; right: 180px; left: initial; animation-delay: 0.6s; animation-duration: 1.5s; }
+        .shooting-stars span:nth-child(5) { top: 0; right: 400px; left: initial; animation-delay: 0.8s; animation-duration: 2.5s; }
+        .shooting-stars span:nth-child(6) { top: 0; right: 600px; left: initial; animation-delay: 1s; animation-duration: 3s; }
+        .shooting-stars span:nth-child(7) { top: 300px; right: 0px; left: initial; animation-delay: 1.2s; animation-duration: 1.75s; }
+
+
+        /* =========================================================
+           NAVIGASI MENU
+           ========================================================= */
+        nav {
+            padding: 20px 5%;
+            display: flex;
+            align-items: center;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .nav-container {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            width: 100%;
+            gap: 28px;
+        }
+
+        .social-links {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-self: end;
+            padding-left: 12px;
+        }
+
+        .social-links a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-main);
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background: rgba(59, 130, 246, 0.22);
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none; /* Hilangkan garis bawah jika jadi link */
+            justify-self: center;
+            text-align: center;
+            white-space: nowrap;
+            display: inline-block;
+            max-width: 100%;
+            padding: 0 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 18px;
+            justify-self: start;
+            align-items: center;
+            flex-wrap: nowrap;
+            white-space: nowrap;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .dropdown {
+            position: relative;
+            padding-bottom: 12px;
+            margin-bottom: -12px;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 12px);
+            left: 0;
+            min-width: 380px;
+            display: none;
+            flex-direction: column;
+            gap: 8px;
+            padding: 12px;
+            background: rgba(15, 23, 42, 0.96);
+            border: 1px solid rgba(255,255,255,0.10);
+            border-radius: 14px;
+            box-shadow: 0 18px 40px rgba(0,0,0,0.5);
+            backdrop-filter: blur(12px);
+            z-index: 1001;
+            opacity: 0;
+            transform: translateY(-8px);
+            transition: opacity 0.25s ease, transform 0.25s ease;
+        }
+
+        .dropdown:hover .dropdown-menu,
+        .dropdown:focus-within .dropdown-menu,
+        .dropdown-menu:hover {
+            display: flex;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu a {
+            padding: 10px 12px;
+            border-radius: 10px;
+            color: #e2e8f0;
+            transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
+        }
+
+        .dropdown-menu a:hover {
+            background: rgba(59, 130, 246, 0.15);
+            color: white;
+            transform: translateX(3px);
+        }
+
+        /* Container Umum */
+        section {
+            padding: 100px 10%;
+            position: relative; /* Agar konten tetap di atas background animasi */
+            z-index: 1; 
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 40px;
+            align-items: center;
+            padding-top: 100px;
+        }
+
+        .hero-copy {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-photo {
+            width: min(100%, 420px);
+            border-radius: 24px;
+            border: 2px solid rgba(255,255,255,0.12);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero h2 {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero h3 {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            font-weight: 400;
+            margin-bottom: 30px;
+        }
+
+        .hero p {
+            max-width: 600px;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        /* Tombol */
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--accent-gradient);
+            color: white;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-main);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(59, 130, 246, 0.15);
+            border-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .scroll-indicator {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 2.3rem;
+            animation: bounce 2s infinite;
+            align-self: center;
+        }
+
+        .scroll-indicator i {
+            font-size: 2.3rem;
+        }
+        
+        /* Modifikasi khusus tombol Instagram untuk hover warna khas IG (opsional tapi keren) */
+        .btn-ig:hover {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            border-color: transparent;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(220, 39, 67, 0.4);
+        }
+
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-photo {
+            width: 100%;
+            border-radius: 20px;
+            border: 2px solid rgba(255,255,255,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            animation: float 6s ease-in-out infinite; 
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 60%;
+            height: 4px;
+            background: var(--accent-gradient);
+            border-radius: 2px;
+        }
+
+        /* Competencies & Projects Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .subcards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .sub-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 16px;
+            color: var(--text-main);
+            display: block;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .sub-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-color);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+        }
+
+        .sub-card strong {
+            display: block;
+            margin-bottom: 6px;
+            color: #fff;
+        }
+
+        .sub-card span {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        .expandable-details {
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            background: rgba(255,255,255,0.03);
+            padding: 4px;
+        }
+
+        .expandable-summary {
+            list-style: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 14px 16px;
+            border-radius: 12px;
+            color: #f8fafc;
+            font-weight: 700;
+            user-select: none;
+        }
+
+        .expandable-summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .expandable-summary i {
+            transition: transform 0.3s ease;
+            color: #93c5fd;
+        }
+
+        .expandable-details[open] .expandable-summary i {
+            transform: rotate(180deg);
+        }
+
+        .expandable-details p {
+            margin: 14px 16px 0;
+        }
+
+        .detail-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 16px 16px 18px;
+            padding: 10px 14px;
+            border-radius: 999px;
+            text-decoration: none;
+            color: #dbeafe;
+            background: rgba(96,165,250,0.12);
+            border: 1px solid rgba(96,165,250,0.35);
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .detail-link:hover {
+            background: rgba(96,165,250,0.18);
+        }
+
+        .honors-grid,
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .honor-card,
+        .skill-card {
+            background: var(--card-bg);
+            padding: 24px;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.08);
+            backdrop-filter: blur(10px);
+        }
+
+        .honor-card {
+            display: block;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: all 0.3s ease;
+        }
+
+        .honor-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(96, 165, 250, 0.65);
+            box-shadow: 0 10px 26px rgba(0,0,0,0.38);
+        }
+
+        .honor-card h4,
+        .skill-card h4 {
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .honor-card p,
+        .skill-card p {
+            color: #dce9ff;
+            font-size: 0.92rem;
+            line-height: 1.7;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .skill-tags span {
+            background: rgba(59, 130, 246, 0.14);
+            border: 1px solid rgba(59, 130, 246, 0.35);
+            color: #dbeafe;
+            padding: 8px 12px;
+            border-radius: 999px;
+            font-size: 0.85rem;
+        }
+
+        /* Project Links */
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: gap 0.3s;
+        }
+
+        .project-link:hover {
+            gap: 15px;
+        }
+
+        /* Animasi Mengambang Foto */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(8px); }
+            60% { transform: translateY(4px); }
+        }
+
+        #backToTop {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 48px;
+            height: 48px;
+            border: none;
+            border-radius: 50%;
+            background: var(--accent-gradient);
+            color: white;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            z-index: 999;
+        }
+
+        #backToTop.show {
+            display: flex;
+        }
+
+        /* Responsive Design untuk HP */
+        @media (max-width: 768px) {
+            .nav-container { grid-template-columns: 1fr; gap: 15px; }
+            .social-links { justify-self: start; }
+            .logo { justify-self: start; text-align: left; }
+            .nav-links { flex-wrap: wrap; gap: 15px; justify-self: start; }
+            .dropdown-menu { position: static; margin-top: 8px; min-width: unset; }
+            nav { padding: 15px 5%; }
+            .hero { grid-template-columns: 1fr; padding-top: 150px; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero h3 { font-size: 1.2rem; }
+            .about-grid { grid-template-columns: 1fr; }
+            section { padding: 80px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- BACKGROUND ANIMASI LUAR ANGKASA (SHOOTING STARS) -->
+    <div class="space-background">
+        <div class="shooting-stars">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <!-- =========================================================
+         BAGIAN NAVIGASI ATAS (MENU POJOK KIRI ATAS)
+         ========================================================= -->
+    <nav>
+        <div class="nav-container">
+            <!-- Menu Navigasi -->
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About Me</a>
+                <div class="dropdown">
+                    <a href="#projects">Explore My Work</a>
+                    <div class="dropdown-menu">
+                        <a href="#professional-experience">Professional Experience</a>
+                        <a href="#leadership-experiences">Leadership &amp; Organizational Experiences</a>
+                        <a href="#community-impact">Community &amp; Social Impact</a>
+                    </div>
+                </div>
+                <a href="#honors">Honors &amp; Awards</a>
+                <a href="#skills">Skills</a>
+            </div>
+
+            <!-- Nama Singkat untuk Logo berfungsi juga menuju halaman utama -->
+            <a href="#home" class="logo" title="Chorudin Yoga Prastya">Chorudin Yoga Prastya</a>
+
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/choirudin-yoga-prastya-1a37511a0/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:choirudin.yoga@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.instagram.com/yogaprastya_reve/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- =========================================================
+         BAGIAN HERO (HALAMAN DEPAN)
+         ========================================================= -->
+    <section id="home" class="hero">
+        <div class="hero-copy">
+            <h2>HELLO, I'M</h2>
+            <h1>Choirudin Yoga Prastya.</h1>
+            <h3>Materials &amp; Process Engineer | Data-Driven Problem Solver</h3>
+            <p>Bridging the gap between rigorous technical analysis and high-impact organizational leadership to drive manufacturing excellence and strategic growth.</p>
+            
+            <div class="btn-group">
+                <!-- 1. Link Download Resume -->
+                <a href="https://drive.google.com/file/d/1_Abk_oUtntXw1lRE4CTj38NgR2mMnVe6/view?usp=sharing" target="_blank" class="btn btn-primary"><i class="fas fa-download"></i> Download Resume</a>
+            </div>
+
+            <a href="#about" class="scroll-indicator" aria-label="Scroll to explore more">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+
+        <div class="hero-visual">
+            <img src="foto_yoga.jpg.png" alt="Choirudin Yoga Prastya" class="hero-photo">
+        </div>
+    </section>
+
+    <!-- =========================================================
+         BAGIAN EXECUTIVE SUMMARY (ABOUT ME)
+         ========================================================= -->
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-grid">
+            <!-- GANTI FOTO: Masukkan link/URL foto profesional kamu di bagian src="" di bawah ini -->
+            <img src="foto_yoga.jpg.png" alt="Choirudin Yoga Prastya" class="about-photo">
+            
+            <div>
+                <p style="margin-bottom: 20px; color: var(--text-main);">
+                    I am a <strong>Metallurgical and Materials Engineering graduate from Universitas Indonesia</strong>. My expertise spans materials processing and defect mitigation, built through direct experience across manufacturing operations and large-scale student leadership.
+                </p>
+                <p style="margin-bottom: 20px; color: var(--text-main);">
+                    At leading manufacturing firms—<strong>PT Astra Honda Motor (AHM), PT Pindad, and PT Unipack Plasindo</strong>—I developed a sharp investigative mindset, applying structured methodologies like Root Cause Analysis (RCA) and Fault Tree Analysis (FTA) to resolve production defects and strengthen Quality Assurance (QA/QC) processes.
+                </p>
+                <p style="color: var(--text-main);">
+                    Beyond the technical side, I've established a track record of leadership—serving as <strong>Vice President for the Rumah Kepemimpinan Scholarship</strong> and leading initiatives that reached <strong>2,000+ students and volunteers</strong> across academic and social programs. These experiences sharpened the cross-functional coordination and communication skills I now bring to technical and operational work alike.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         BAGIAN CORE COMPETENCIES (WHY ME)
+         ========================================================= -->
+    <section id="competencies">
+        <h2 class="section-title">Why Me?</h2>
+        <div class="cards-grid">
+            <!-- Kotak 1 -->
+            <div class="card">
+                <i class="fas fa-cogs"></i>
+                <h4>Industrial Engineering & QA/QC</h4>
+                <p>Proven track record in analyzing and mitigating production defects in automotive casting, polymer extrusion, and steel manufacturing. Expert in RCA, FTA, and Destructive Testing.</p>
+            </div>
+
+            <!-- Kotak 2 -->
+            <div class="card">
+                <i class="fas fa-chart-line"></i>
+                <h4>Data Analytics & Tech Acumen</h4>
+                <p>Adept at bridging physical engineering with digital insights. Proficient in Python, Google Colab, and certified in SAP Analytics Cloud & SAP Build Apps for data modeling.</p>
+            </div>
+
+            <!-- Kotak 3 -->
+            <div class="card">
+                <i class="fas fa-users"></i>
+                <h4>Strategic Leadership & Execution</h4>
+                <p>Demonstrated capability in orchestrating large-scale projects. Directed 50+ strategic dormitory initiatives and successfully led teams of up to 70+ volunteers.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         BAGIAN EXPLORE MY WORK (PENGANTAR PROYEK)
+         ========================================================= -->
+    <section id="projects">
+        <h2 class="section-title">Explore My Work</h2>
+        <p style="color: var(--text-muted); margin-bottom: 30px;">Discover how I approach complex problems, analyze data, and deliver measurable solutions across different sectors:</p>
+        
+        <div class="cards-grid">
+            <div class="card" id="professional-experience">
+                <h4>🏭 Professional Experience</h4>
+                <p>Focused manufacturing and process improvement roles spanning automotive casting, defense support, and polymer extrusion quality systems.</p>
+                <div class="subcards-grid">
+                    <a class="sub-card" href="pt-ahm.html"><strong>PT Astra Honda Motor</strong><span>Process improvement, defect mitigation, and engineering analysis.</span></a>
+                    <a class="sub-card" href="pt-pindad.html"><strong>PT Pindad</strong><span>Technical investigation and quality reliability support.</span></a>
+                    <a class="sub-card" href="pt-unipack.html"><strong>PT Unipack Plasindo</strong><span>Extrusion and polymer manufacturing quality analysis.</span></a>
+                </div>
+            </div>
+
+            <div class="card" id="leadership-experiences">
+                <h4>🧠 Leadership &amp; Organizational Experiences</h4>
+                <p>Featured leadership snapshot across governance, mentorship, and student-organization execution.</p>
+                <div class="subcards-grid">
+                    <a class="sub-card" href="pt-mpm-ftui.html"><strong>MPM FTUI</strong><span>Head of Legislative — faculty governance and student welfare oversight.</span></a>
+                    <a class="sub-card" href="pt-electrical-physics-lab.html"><strong>Electrical Physics Laboratory</strong><span>Laboratory Assistant — mentoring 2,000+ students and grading discipline.</span></a>
+                    <a class="sub-card" href="pt-rumah-kepemimpinan.html"><strong>Rumah Kepemimpinan Scholarship</strong><span>Vice President — leadership training and strategic initiatives.</span></a>
+                </div>
+                <details class="expandable-details">
+                    <summary class="expandable-summary">
+                        <span>Show all 8 leadership experiences</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </summary>
+                    <div class="subcards-grid" style="margin-top: 12px; margin-bottom: 4px;">
+                        <a class="sub-card" href="pt-physical-metallurgy-lab.html"><strong>Physical Metallurgy Laboratory</strong><span>Laboratory Assistant — practical mentoring and successor recruitment.</span></a>
+                        <a class="sub-card" href="pt-immt-ftui.html"><strong>IMMt FTUI</strong><span>Staff of Administration — organizational consolidation and staff training.</span></a>
+                        <a class="sub-card" href="pt-gptech-ui.html"><strong>GPTech SC UI</strong><span>Finance, Secretary, &amp; Community Service Treasurer — budget transparency.</span></a>
+                        <a class="sub-card" href="pt-gradasi-ftui.html"><strong>Gradasi FTUI</strong><span>Head of Event — charity and sharing event orchestration.</span></a>
+                        <a class="sub-card" href="pt-mnm-ftui.html"><strong>MnM's FTUI</strong><span>Staff of Event Summit — summit logistics and documentation.</span></a>
+                    </div>
+                </details>
+            </div>
+
+            <div class="card" id="community-impact">
+                <h4>🌍 Community &amp; Social Impact</h4>
+                <p>Community programs are now separated into dedicated project pages so each initiative can be explored independently.</p>
+                <div class="subcards-grid">
+                    <a class="sub-card" href="pt-kopimpah.html"><strong>Kopimpah</strong><span>Waste-sorting education, bin procurement, and organic waste processing.</span></a>
+                    <a class="sub-card" href="pt-terasman.html"><strong>Terasman</strong><span>Gender equality education, digital campaigns, and volunteer coordination.</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         BAGIAN HONORS & AWARDS
+         ========================================================= -->
+    <section id="honors">
+        <h2 class="section-title">Honors & Awards</h2>
+        <div class="honors-grid">
+            <a class="honor-card" href="pt-honors-pkm-re-2025.html">
+                <h4>🏆 Top 5 Finalist — PKM-RE</h4>
+                <p>Exact Science Research, Faculty of Engineering, Universitas Indonesia | 2025</p>
+            </a>
+            <a class="honor-card" href="pt-honors-pkm-k-2024.html">
+                <h4>🚀 Top 5 Finalist — PKM-K</h4>
+                <p>Entrepreneurship, Faculty of Engineering, Universitas Indonesia | 2024</p>
+            </a>
+            <a class="honor-card" href="pt-honors-best-paper-2023.html">
+                <h4>📝 Top 8 Best Paper</h4>
+                <p>National Essay Competition, Universitas Padjadjaran | 2023</p>
+            </a>
+            <a class="honor-card" href="pt-honors-odisea-2022.html">
+                <h4>🥇 1st Place — ODISSEA</h4>
+                <p>National Scientific History Paper Competition, Universitas Negeri Malang | 2022</p>
+            </a>
+            <a class="honor-card" href="pt-honors-trunojoyo-2022.html">
+                <h4>📚 Best Paper</h4>
+                <p>National Scientific Paper Competition, Universitas Trunojoyo Madura | 2022</p>
+            </a>
+            <a class="honor-card" href="pt-honors-math-science-2021.html">
+                <h4>🏅 Silver Medal</h4>
+                <p>Competition of Mathematics and Science | 2021</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         BAGIAN SKILLS
+         ========================================================= -->
+    <section id="skills">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h4>Technical Skills</h4>
+                <p>Process analysis, defect mitigation, QA/QC, root cause analysis, materials engineering, and data-driven manufacturing support.</p>
+                <div class="skill-tags">
+                    <span>RCA</span>
+                    <span>FTA</span>
+                    <span>QA/QC</span>
+                    <span>Python</span>
+                    <span>Google Colab</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h4>Digital & Business Skills</h4>
+                <p>Strategic planning, project coordination, stakeholder communication, and operational leadership for high-impact initiatives.</p>
+                <div class="skill-tags">
+                    <span>SAP Analytics Cloud</span>
+                    <span>SAP Build Apps</span>
+                    <span>Project Management</span>
+                    <span>Leadership</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h4>Core Strengths</h4>
+                <p>Analytical mindset, collaboration, communication, adaptability, and problem solving in dynamic environments.</p>
+                <div class="skill-tags">
+                    <span>Critical Thinking</span>
+                    <span>Teamwork</span>
+                    <span>Communication</span>
+                    <span>Innovation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Simpel -->
+    <footer style="text-align: center; padding: 40px; color: var(--text-muted); border-top: 1px solid rgba(255,255,255,0.05); position: relative; z-index: 1;">
+        <p>&copy; 2026 Choirudin Yoga Prastya. All Rights Reserved.</p>
+    </footer>
+
+    <button id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script>
+        const backToTopButton = document.getElementById('backToTop');
+        const dropdown = document.querySelector('.dropdown');
+        const dropdownMenu = document.querySelector('.dropdown-menu');
+        let dropdownHideTimer;
+
+        if (dropdown && dropdownMenu) {
+            dropdown.addEventListener('mouseenter', function () {
+                clearTimeout(dropdownHideTimer);
+                dropdownMenu.style.display = 'flex';
+                dropdownMenu.style.opacity = '1';
+                dropdownMenu.style.transform = 'translateY(0)';
+            });
+
+            dropdown.addEventListener('mouseleave', function () {
+                dropdownHideTimer = setTimeout(function () {
+                    dropdownMenu.style.display = 'none';
+                    dropdownMenu.style.opacity = '0';
+                    dropdownMenu.style.transform = 'translateY(-8px)';
+                }, 180);
+            });
+
+            dropdownMenu.addEventListener('mouseenter', function () {
+                clearTimeout(dropdownHideTimer);
+            });
+
+            dropdownMenu.addEventListener('mouseleave', function () {
+                dropdownHideTimer = setTimeout(function () {
+                    dropdownMenu.style.display = 'none';
+                    dropdownMenu.style.opacity = '0';
+                    dropdownMenu.style.transform = 'translateY(-8px)';
+                }, 180);
+            });
+        }
+
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+
+        backToTopButton.addEventListener('click', function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+
+</body>
+</html>
