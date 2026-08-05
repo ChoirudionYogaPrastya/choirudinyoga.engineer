@@ -1,2 +1,0 @@
-# choirudinyoga.engineer
-choirudinyoga.engineer
